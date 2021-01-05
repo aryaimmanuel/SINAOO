@@ -1,0 +1,13 @@
+{
+    "name": "Materiku",
+    "alias": "materiku",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Materiku\\Providers\\MaterikuServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

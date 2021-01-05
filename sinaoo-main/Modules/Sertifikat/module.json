@@ -1,0 +1,13 @@
+{
+    "name": "Sertifikat",
+    "alias": "sertifikat",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Sertifikat\\Providers\\SertifikatServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
