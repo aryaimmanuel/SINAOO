@@ -28,7 +28,10 @@ Route::get('/testing', function () {
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'ProfileController@index')->name('profile');
+// Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::get('/profile', function(){
+    return redirect()->away('http://smartcity.kodekodeku.com/profile');
+})->name('profile')->middleware('auth');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
 Route::get('/about', function () {

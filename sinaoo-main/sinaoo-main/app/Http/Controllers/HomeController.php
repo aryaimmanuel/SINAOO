@@ -49,11 +49,13 @@ class HomeController extends Controller
             'catatan' => "Pembayaran untuk Sinaoo Premium Account, akun: " . Auth::user()->email
         ]);
 
-        return redirect()->route('profile')->with('success', 'Berhasil!' . config('app.ezpay '));
+        return redirect()->route('premium_data')->with('success', 'Berhasil! Silahkan lakukan pembayaran.');
     }
 
     public function premium_data()
     {
-        return view('premium');
+        $title = "Akun";
+        $code = UserPremium::where('user_id', Auth::id())->latest()->first()->payment_code ?? null;
+        return view('premium', compact('title', 'code'));
     }
 }

@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/masuk', [JogjaController::class, 'masuk']);
+Route::post('/update', [JogjaController::class, 'update']);
+Route::post('/password', [JogjaController::class, 'password']);
 Route::get('/konfirmasi', [JogjaController::class, 'konfirmasi']);

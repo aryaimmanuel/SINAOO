@@ -51,4 +51,25 @@ class JogjaController extends Controller
             return response()->json("oke", 200);
         }
     }
+
+    public function update(Request $request)
+    {
+        $user = User::where('email', $request->input('email'))->first();
+        $user->name = $request->input('name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->save();
+    }
+
+    public function password(Request $request)
+    {
+        $user = User::where('email', $request->input('email'))->first();
+
+        if (Hash::check($request->input('current_password'), $user->password)) {
+            $user->password = Hash::make($request->input('new_password'));
+            $user->save();
+        } else {
+            return redirect()->back()->withInput();
+        }
+    }
 }
